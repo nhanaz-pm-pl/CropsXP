@@ -6,7 +6,6 @@ namespace NhanAZ\CropsXP;
 
 use pocketmine\block\Bamboo;
 use pocketmine\block\Beetroot;
-use pocketmine\block\BrownMushroomBlock;
 use pocketmine\block\Cactus;
 use pocketmine\block\Carrot;
 use pocketmine\block\CocoaBlock;
@@ -14,7 +13,6 @@ use pocketmine\block\Melon;
 use pocketmine\block\NetherWartPlant;
 use pocketmine\block\Potato;
 use pocketmine\block\Pumpkin;
-use pocketmine\block\RedMushroomBlock;
 use pocketmine\block\SeaPickle;
 use pocketmine\block\Sugarcane;
 use pocketmine\block\SweetBerryBush;
@@ -98,14 +96,7 @@ class Main extends PluginBase implements Listener {
 			$event->setXpDropAmount(mt_rand(0, 1));
 			return;
 		}
-		if ($block instanceof RedMushroomBlock || $block instanceof BrownMushroomBlock) {
-			if ($item->hasEnchantment(VanillaEnchantments::SILK_TOUCH())) {
-				$event->setXpDropAmount(mt_rand(0, 1));
-			} else {
-				$event->setXpDropAmount(mt_rand(0, 2));
-			}
-			return;
-		}
+		# TODO: Mushrooms
 		if ($block instanceof SeaPickle) {
 			$event->setXpDropAmount(mt_rand(0, $block->getCount()));
 			return;
