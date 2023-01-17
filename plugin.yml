@@ -2,7 +2,7 @@
 name: CropsXP
 version: 0.0.1
 main: NhanAZ\CropsXP\Main
-api: 4.0.0
+api: 4.1.0
 
 website: https://github.com/NhanAZ
 description: Drops XP orbs on the ground when the player harvests crops.
