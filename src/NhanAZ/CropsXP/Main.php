@@ -40,7 +40,7 @@ class Main extends PluginBase implements Listener {
 			return;
 		}
 		if ($block instanceof Wheat || $block instanceof Beetroot || $block instanceof Carrot) {
-			if ($block->getAge() >= $block::MAX_AGE) {
+			if ($block->getAge() >= Wheat::MAX_AGE or $block->getAge() >= Beetroot::MAX_AGE or $block->getAge() >= Carrot::MAX_AGE) {
 				$event->setXpDropAmount(mt_rand(0, 3));
 			} else {
 				$event->setXpDropAmount(mt_rand(0, 1));
@@ -48,7 +48,7 @@ class Main extends PluginBase implements Listener {
 			return;
 		}
 		if ($block instanceof Potato) {
-			if ($block->getAge() >= $block::MAX_AGE) {
+			if ($block->getAge() >= Potato::MAX_AGE) {
 				$event->setXpDropAmount(mt_rand(1, 5));
 			} else {
 				$event->setXpDropAmount(mt_rand(0, 1));
@@ -72,7 +72,7 @@ class Main extends PluginBase implements Listener {
 			return;
 		}
 		if ($block instanceof CocoaBlock) {
-			if ($block->getAge() >= $block::MAX_AGE) {
+			if ($block->getAge() >= CocoaBlock::MAX_AGE) {
 				$event->setXpDropAmount(mt_rand(1, 3));
 			} else {
 				$event->setXpDropAmount(mt_rand(0, 1));
@@ -111,7 +111,7 @@ class Main extends PluginBase implements Listener {
 			return;
 		}
 		if ($block instanceof NetherWartPlant) {
-			if ($block->getAge() === $block::MAX_AGE) {
+			if ($block->getAge() === NetherWartPlant::MAX_AGE) {
 				$event->setXpDropAmount(mt_rand(2, 4));
 			} else {
 				$event->setXpDropAmount(mt_rand(0, 1));
